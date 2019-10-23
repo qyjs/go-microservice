@@ -1,0 +1,13 @@
+version: '2'
+services:
+  go-js-service:
+    build: .
+    image: docker-all.repo.ebaotech.com/eBao/go-js-service:latest
+    ports:
+      - "8080:80"
+    environment:
+      - PORT=80
+    volumes:
+      - ./logs/:/app/logs/
+    network_mode: "bridge"
+    container_name: go-js-service

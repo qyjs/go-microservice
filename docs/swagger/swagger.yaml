@@ -1,0 +1,82 @@
+basePath: /qrcode
+definitions:
+  response.Msg:
+    properties:
+      code:
+        type: integer
+      message:
+        type: string
+    type: object
+  response.Response:
+    properties:
+      data:
+        type: object
+      message:
+        $ref: '#/definitions/response.Msg'
+        type: object
+      status:
+        type: string
+    type: object
+host: go-js-service
+info:
+  contact:
+    email: dengyue.chen@ebaotech.com
+    name: eBaoCloud Container
+    url: http://www.swagger.io/support
+  description: go-js-service
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  title: go-js-service API
+  version: "1.0"
+paths:
+  /base64:
+    get:
+      consumes:
+      - application/json
+      description: get qrcode by content
+      parameters:
+      - description: content
+        in: query
+        name: content
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: string
+        "400":
+          description: error response
+          schema:
+            $ref: '#/definitions/response.Response'
+            type: object
+      summary: GenerateQrcode
+  /png:
+    get:
+      consumes:
+      - application/json
+      description: get qrcode png by content
+      operationId: get-string-by-int
+      parameters:
+      - description: content
+        in: query
+        name: content
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: string
+        "400":
+          description: error response
+          schema:
+            $ref: '#/definitions/response.Response'
+            type: object
+      summary: GenerateQrcodePng
+swagger: "2.0"
