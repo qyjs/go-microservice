@@ -11,6 +11,7 @@ require (
 	github.com/go-stack/stack v1.8.0 // indirect
 	github.com/golang/protobuf v1.3.2 // indirect
 	github.com/inconshreveable/log15 v0.0.0-20180818164646-67afb5ed74ec
+	github.com/jmoiron/sqlx v1.2.0 // indirect
 	github.com/json-iterator/go v1.1.7 // indirect
 	github.com/mattn/go-colorable v0.0.9 // indirect
 	github.com/mattn/go-isatty v0.0.10 // indirect
